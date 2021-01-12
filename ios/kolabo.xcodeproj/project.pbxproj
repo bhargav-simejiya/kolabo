@@ -17,6 +17,15 @@
 		2DCD954D1E0B4F2C00145EB5 /* kolaboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* kolaboTests.m */; };
 		3133E74343683F5E2A1BF352 /* libPods-kolabo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE82F62FE29E29A094B523E /* libPods-kolabo-tvOS.a */; };
 		6DF186DBCA0FD156385AE894 /* libPods-kolabo-kolaboTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A2C06D03E27D8B68BABEB8 /* libPods-kolabo-kolaboTests.a */; };
+		7139742E25AD7BBA00CAFD3D /* Neris-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7139742C25AD7BBA00CAFD3D /* Neris-SemiBold.otf */; };
+		7139742F25AD7BBA00CAFD3D /* Neris-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7139742D25AD7BBA00CAFD3D /* Neris-Light.otf */; };
+		71EDB40E25AC8DCE00F89253 /* VisbyRoundCF-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40725AC8DCD00F89253 /* VisbyRoundCF-Light.otf */; };
+		71EDB40F25AC8DCE00F89253 /* VisbyRoundCF-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40825AC8DCD00F89253 /* VisbyRoundCF-ExtraBold.otf */; };
+		71EDB41025AC8DCE00F89253 /* VisbyRoundCF-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40925AC8DCD00F89253 /* VisbyRoundCF-Heavy.otf */; };
+		71EDB41125AC8DCE00F89253 /* VisbyRoundCF-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40A25AC8DCD00F89253 /* VisbyRoundCF-Regular.otf */; };
+		71EDB41225AC8DCE00F89253 /* VisbyRoundCF-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40B25AC8DCD00F89253 /* VisbyRoundCF-Medium.otf */; };
+		71EDB41325AC8DCE00F89253 /* VisbyRoundCF-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40C25AC8DCE00F89253 /* VisbyRoundCF-Bold.otf */; };
+		71EDB41425AC8DCE00F89253 /* VisbyRoundCF-DemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71EDB40D25AC8DCE00F89253 /* VisbyRoundCF-DemiBold.otf */; };
 		7A63868723B967449FEDC2A6 /* libPods-kolabo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E9F20A1CA638FDFD4D4F30 /* libPods-kolabo-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		98E2D40CBE6746742EF544FE /* libPods-kolabo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC761D78C22CECE685958783 /* libPods-kolabo.a */; };
@@ -56,7 +65,16 @@
 		2D02E4901E0B4A5D006451C7 /* kolabo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "kolabo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE82F62FE29E29A094B523E /* libPods-kolabo-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kolabo-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B27E36064783CDA3D94B09F /* Pods-kolabo-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kolabo-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-kolabo-tvOSTests/Pods-kolabo-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7139742C25AD7BBA00CAFD3D /* Neris-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-SemiBold.otf"; sourceTree = "<group>"; };
+		7139742D25AD7BBA00CAFD3D /* Neris-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-Light.otf"; sourceTree = "<group>"; };
 		71D1D4705291584F98C15F5C /* Pods-kolabo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kolabo-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-kolabo-tvOSTests/Pods-kolabo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71EDB40725AC8DCD00F89253 /* VisbyRoundCF-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Light.otf"; sourceTree = "<group>"; };
+		71EDB40825AC8DCD00F89253 /* VisbyRoundCF-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-ExtraBold.otf"; sourceTree = "<group>"; };
+		71EDB40925AC8DCD00F89253 /* VisbyRoundCF-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Heavy.otf"; sourceTree = "<group>"; };
+		71EDB40A25AC8DCD00F89253 /* VisbyRoundCF-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Regular.otf"; sourceTree = "<group>"; };
+		71EDB40B25AC8DCD00F89253 /* VisbyRoundCF-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Medium.otf"; sourceTree = "<group>"; };
+		71EDB40C25AC8DCE00F89253 /* VisbyRoundCF-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-Bold.otf"; sourceTree = "<group>"; };
+		71EDB40D25AC8DCE00F89253 /* VisbyRoundCF-DemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VisbyRoundCF-DemiBold.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = kolabo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1B4078930CC38401EFDE99 /* Pods-kolabo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kolabo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-kolabo-tvOS/Pods-kolabo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		A9D46CFA9F1498A189A81589 /* Pods-kolabo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kolabo.debug.xcconfig"; path = "Target Support Files/Pods-kolabo/Pods-kolabo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +150,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				71E2491125AC83FD009A2BB9 /* Fonts */,
 			);
 			name = kolabo;
 			sourceTree = "<group>";
@@ -147,6 +166,22 @@
 				05E9F20A1CA638FDFD4D4F30 /* libPods-kolabo-tvOSTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71E2491125AC83FD009A2BB9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7139742D25AD7BBA00CAFD3D /* Neris-Light.otf */,
+				7139742C25AD7BBA00CAFD3D /* Neris-SemiBold.otf */,
+				71EDB40C25AC8DCE00F89253 /* VisbyRoundCF-Bold.otf */,
+				71EDB40D25AC8DCE00F89253 /* VisbyRoundCF-DemiBold.otf */,
+				71EDB40825AC8DCD00F89253 /* VisbyRoundCF-ExtraBold.otf */,
+				71EDB40925AC8DCD00F89253 /* VisbyRoundCF-Heavy.otf */,
+				71EDB40725AC8DCD00F89253 /* VisbyRoundCF-Light.otf */,
+				71EDB40B25AC8DCD00F89253 /* VisbyRoundCF-Medium.otf */,
+				71EDB40A25AC8DCD00F89253 /* VisbyRoundCF-Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -194,7 +229,6 @@
 				71D1D4705291584F98C15F5C /* Pods-kolabo-tvOSTests.debug.xcconfig */,
 				5B27E36064783CDA3D94B09F /* Pods-kolabo-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -340,8 +374,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EDB41025AC8DCE00F89253 /* VisbyRoundCF-Heavy.otf in Resources */,
+				7139742E25AD7BBA00CAFD3D /* Neris-SemiBold.otf in Resources */,
+				7139742F25AD7BBA00CAFD3D /* Neris-Light.otf in Resources */,
+				71EDB40F25AC8DCE00F89253 /* VisbyRoundCF-ExtraBold.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				71EDB41325AC8DCE00F89253 /* VisbyRoundCF-Bold.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				71EDB41425AC8DCE00F89253 /* VisbyRoundCF-DemiBold.otf in Resources */,
+				71EDB41225AC8DCE00F89253 /* VisbyRoundCF-Medium.otf in Resources */,
+				71EDB41125AC8DCE00F89253 /* VisbyRoundCF-Regular.otf in Resources */,
+				71EDB40E25AC8DCE00F89253 /* VisbyRoundCF-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,10 +507,42 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-kolabo-kolaboTests/Pods-kolabo-kolaboTests-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,10 +579,42 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-kolabo/Pods-kolabo-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +771,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.innovateafrica.kolabo;
 				PRODUCT_NAME = kolabo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -686,7 +793,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.innovateafrica.kolabo;
 				PRODUCT_NAME = kolabo;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
