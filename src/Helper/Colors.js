@@ -6,7 +6,7 @@ export default {
   BLACK: '#000',
   APP_PINK: 'rgb(225,111,93)',
   LIGHT_GRAY: 'rgb(111,117,135)',
-  CHARCOAL_GREY: 'rgb(59,60,67)',
+  CHARCOAL_GREY: '#5A5A5A',
   GRAY: 'rgb(228,230,238)',
   SEA_FORM_BLUE: '#6fcbda',
   MACRONI_YELLOW: '#e8a62b',

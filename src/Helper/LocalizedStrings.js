@@ -17,6 +17,13 @@ let strings = new LocalizedStrings({
       Register: 'Register !',
       Already: 'Already have an Account?',
       Login: 'Login'
+    },
+    Login: {
+      Login: 'Log In',
+      Hello: 'Hello, Welcome Back',
+      LoginWith: 'Login with your social media account:',
+      Username: 'Username',
+      Password: 'Password'
     }
   },
 })

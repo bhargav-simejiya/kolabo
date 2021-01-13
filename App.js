@@ -2,12 +2,17 @@
 import React from 'react'
 import { View, I18nManager } from 'react-native'
 import { CommonActions } from '@react-navigation/native'
+import * as Sentry from "@sentry/react-native"
+import messaging from '@react-native-firebase/messaging'
 
 // File Imports
+import { SENTRY_URL } from './src/Helper/Constants'
 import LocalizedStrings from './src/Helper/LocalizedStrings'
 
 // Component Imports
 import Loader from '@Loader'
+
+Sentry.init({ dsn: SENTRY_URL })
 
 class App extends React.Component {
   componentDidMount() {
@@ -22,6 +27,22 @@ class App extends React.Component {
     }
 
     this.props.navigation.dispatch(CommonActions.reset({ index: 1, routes: [{ name: 'InitialScreen' }] }))
+    this.requestUserPermission()
+
+    messaging().onMessage(async remoteMessage => {
+      alert('A new FCM message arrived!', JSON.stringify(remoteMessage))
+    })
+
+    messaging().getInitialNotification()
+      .then(remoteMessage => {
+        if (remoteMessage) {
+          log.success(
+            'Notification caused app to open from quit state:',
+            remoteMessage.notification,
+          );
+          setInitialRoute(remoteMessage.data.type); // e.g. "Settings"
+        }
+      })
   }
 
   render() {
@@ -29,6 +50,15 @@ class App extends React.Component {
       <View />
     )
   }
+
+  requestUserPermission = async () => {
+    const authorizationStatus = await messaging().requestPermission()
+    if (authorizationStatus) {
+      let fcmToken = await messaging().getToken()
+      console.log('fcmToken: ', fcmToken)
+      // Utils.setNotificationDeviceToken(fcmToken)
+    }
+  }
 }
 
-export default App;
+export default App

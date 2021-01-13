@@ -41,6 +41,10 @@ export class Register extends Component {
 
   }
 
+  _loginButtonPressed = () => {
+    this.props.navigation.navigate('Login')
+  }
+
   /*
   ..######...#######..##.....##.########...#######..##....##.########.##....##.########..######.
   .##....##.##.....##.###...###.##.....##.##.....##.###...##.##.......###...##....##....##....##
@@ -107,7 +111,7 @@ export class Register extends Component {
     return (
       <View>
         <Text style={styles.alreadyHave}>{LocalizedStrings.Register.Already}</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this._loginButtonPressed}>
           <Text style={[styles.alreadyHave, { fontWeight: '500' }]}>{LocalizedStrings.Register.Login}</Text>
         </TouchableOpacity>
       </View>

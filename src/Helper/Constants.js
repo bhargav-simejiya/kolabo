@@ -13,7 +13,7 @@ export const IMAGE_URL = /([a-z\-_0-9\/\:\.]*\.(jpg|jpeg|png|gif))/i
 export const BASE_URL = ''
 
 // SENTRY URL
-export const SENTRY_URL = 'https://29a3971cf94e45e4a95fb72f8b6aea4e@o326473.ingest.sentry.io/5453790'
+export const SENTRY_URL = 'https://1311e5835f5547f5be68ee4306af298f@o326473.ingest.sentry.io/5590572'
 
 // LOTTIE_ANIMATION_FILE
 export const LOTTIE_ANIMATION_FILE = require('../../loader1.json')
