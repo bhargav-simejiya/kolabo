@@ -1,6 +1,6 @@
 // Global Imports
 import React from 'react'
-import { View, I18nManager } from 'react-native'
+import { View, I18nManager, Text } from 'react-native'
 import { CommonActions } from '@react-navigation/native'
 import * as Sentry from "@sentry/react-native"
 import messaging from '@react-native-firebase/messaging'
@@ -16,6 +16,7 @@ Sentry.init({ dsn: SENTRY_URL })
 
 class App extends React.Component {
   componentDidMount() {
+    console.log("KOLABO-- App")
     LocalizedStrings.setLanguage('en')
 
     if (LocalizedStrings.getLanguage() === 'ar') {
@@ -47,7 +48,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <View />
+      <View style={{ flex: 1 }}>
+        <Text>Kolabo</Text>
+        </View>
     )
   }
 

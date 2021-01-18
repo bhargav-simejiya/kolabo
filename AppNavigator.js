@@ -15,30 +15,45 @@ import AboutRAIN from './src/screens/AboutRAIN'
 import Register from './src/screens/Register'
 import Login from './src/screens/Login'
 
+import HomeScreen from './src/screens/HomeScreen'
+import SideMenu from '@SideMenu'
+
+import { WIDTH } from './src/Helper/Constants'
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 const Tab = createBottomTabNavigator()
-
-// const DrawerNavigator = () => {
-//   return (
-//     <Drawer.Navigator
-//       initialRouteName="Home"
-//       drawerStyle={{ width: WIDTH }}
-//       drawerContent={props => <SideMenu {...props} />}
-//       screenOptions={{ headerStyle: {}, useNativeAnimations: false }}
-//       drawerPosition='left'
-//     >
-//       <Drawer.Screen
-//         name="Home"
-//         component={HomeStack}
-//       />
-//     </Drawer.Navigator>
-//   )
-// }
+const HomeStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+            name="HomeScreen"
+            component={HomeScreen}
+            options={() => ({ headerShown: false })}
+          />
+    </Stack.Navigator>
+  )
+}
+const DrawerNavigator = () => {
+  return (
+    <Drawer.Navigator
+      initialRouteName="Home"
+      drawerStyle={{ width: WIDTH * 0.8 }}
+      drawerContent={() => <SideMenu />}
+      screenOptions={{ headerStyle: {}, useNativeAnimations: false }}
+      drawerPosition='left'
+    >
+      <Drawer.Screen
+        name="Home"
+        component={HomeStack}
+      />
+    </Drawer.Navigator>
+  )
+}
 
 class AppNavigator extends React.Component {
   componentDidMount() {
     LogBox.ignoreAllLogs(true)
+    console.log("KOLABO-- AppNavigator")
   }
 
   render() {
@@ -75,6 +90,12 @@ class AppNavigator extends React.Component {
             component={Login}
             options={() => ({ headerShown: false })}
           />
+          <Stack.Screen
+            name="Dashboard"
+            component={DrawerNavigator}
+            options={() => ({ headerShown: false })}
+          />
+          
         </Stack.Navigator>
       </NavigationContainer>
     );

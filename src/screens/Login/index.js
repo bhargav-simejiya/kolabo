@@ -45,7 +45,7 @@ export class Login extends Component {
   */
 
   _loginButtonPressed = () => {
-
+    this.props.navigation.navigate('Dashboard')
   }
 
   /*
