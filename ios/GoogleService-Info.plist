@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>945147674348-8nhflf8kndpvk9s88l79k4nukabr5qme.apps.googleusercontent.com</string>
+	<string>945147674348-eso76avjf89dfjfdfn390dbdtn18ofa8.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.945147674348-8nhflf8kndpvk9s88l79k4nukabr5qme</string>
+	<string>com.googleusercontent.apps.945147674348-eso76avjf89dfjfdfn390dbdtn18ofa8</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>945147674348-9v7a78oehdicpve64pbkheelekh0k0q6.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.innovateafrica.kolabo</string>
+	<string>com.innovateafrica.kolaboapp</string>
 	<key>PROJECT_ID</key>
 	<string>kolabo-app</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:945147674348:ios:90a4164a685e0f3bea2fc9</string>
+	<string>1:945147674348:ios:247f86b2acb2a3e3ea2fc9</string>
 </dict>
 </plist>

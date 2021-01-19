@@ -18,7 +18,7 @@ import imgGoogle from '../../../assets/images/google.png'
 import imgInstagram from '../../../assets/images/instagram.png'
 import imgTwitter from '../../../assets/images/twitter.png'
 
-export class Register extends Component {
+export class RegistrationFormScreen extends Component {
   render() {
     return this.renderMainView()
   }
@@ -38,7 +38,7 @@ export class Register extends Component {
   }
 
   _registerButtonPressed = () => {
-    this.props.navigation.navigate('RegistrationFormScreen')
+
   }
 
   _loginButtonPressed = () => {
@@ -57,7 +57,7 @@ export class Register extends Component {
 
   renderMainView = () => {
     return (
-      <ImageBackground source={imgBG} style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         <StatusBar barStyle='light-content' />
         <SafeAreaView style={styles.container}>
           <HeaderBackButton buttonAction={this._onPressBack} btnStyle={styles.backButton} tintColor={'white'} />
@@ -65,10 +65,9 @@ export class Register extends Component {
             {this.renderContent()}
             {this.renderRegisterButton()}
             {this.renderSocialLogin()}
-            {this.renderAlreadyLogin()}
           </View>
         </SafeAreaView>
-      </ImageBackground>
+      </View>
     )
   }
 
@@ -119,4 +118,4 @@ export class Register extends Component {
   }
 }
 
-export default Register
+export default RegistrationFormScreen

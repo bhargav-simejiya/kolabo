@@ -3,10 +3,13 @@ import React, { Component } from 'react'
 import { TouchableOpacity, Text, Image, View, FlatList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
+
 // File imports
 import COLORS from '../../Helper/Colors'
 import { WIDTH } from '../../Helper/Constants'
 import FONTS from '../../Helper/Fonts'
+import StyleConfig from '../../Helper/StyleConfig';
 let dataJson = [
   {
     id: 1,
@@ -33,7 +36,7 @@ let dataJson = [
     id: 4,
     title: "Contact Us",
     icon: null,
-    action: "ContactUSScreen",
+    action: "ContactUsScreen",
     showDevider: true
   },
   {
@@ -54,47 +57,79 @@ let dataJson = [
     id: 7,
     title: "App Version",
     icon: null,
-    action: "AppVersionScreen",
+    action: null,
     showDevider: true
   },
   {
     id: 8,
     title: "Log Off",
     icon: null,
-    action: "LogOffScreen",
+    action: null,
     showDevider: false
   },
 ]
 
-const SideBarItem = ({ item, ...props }) => {
+const SideBarItem = ({ item, onItemPress,...props }) => {
   return (
     <>
-      <TouchableOpacity style={[styles.itemContainer]}>
-        {item.id == 1 && <Icon name={item.icon} size={30} color="#900" />}
+      <TouchableOpacity style={[styles.itemContainer]} onPress={onItemPress}>
+        {item.id == 1 && <Icon name={item.icon} size={StyleConfig.countPixelRatio(30)} color={COLORS.APP_PRIMARY} />}
         {item.title.length > 0 && <Text style={styles.titleText}>{item.title}</Text>}
       </TouchableOpacity>
-      <View style={{ marginHorizontal:16, height: item.showDevider ? 0.5 : 0, backgroundColor: COLORS.DRAWER_BORDER_COLOR }} />
+      <View style={{ marginHorizontal:StyleConfig.countPixelRatio(16), height: item.showDevider ? 0.5 : 0, backgroundColor: COLORS.DRAWER_BORDER_COLOR }} />
     </>
   )
   
 }
 
-class SideMenu extends Component {
-  constructor(props) {
-    super(props);
+const SideMenu = ({ navigation, ...props})=> {
+ 
+
+  /*
+  .##....##....###....##.....##.####..######......###....########.####..#######..##....##..######.
+  .###...##...##.##...##.....##..##..##....##....##.##......##.....##..##.....##.###...##.##....##
+  .####..##..##...##..##.....##..##..##.........##...##.....##.....##..##.....##.####..##.##......
+  .##.##.##.##.....##.##.....##..##..##...####.##.....##....##.....##..##.....##.##.##.##..######.
+  .##..####.#########..##...##...##..##....##..#########....##.....##..##.....##.##..####.......##
+  .##...###.##.....##...##.##....##..##....##..##.....##....##.....##..##.....##.##...###.##....##
+  .##....##.##.....##....###....####..######...##.....##....##....####..#######..##....##..######.
+  */
+  
+
+  const _onItemPress = (item) => {
+    if (item.id == 1) {
+      console.log(props)
+      navigation.closeDrawer()
+    } else if(item.id == 7){
+
+    } else if(item.id == 8){
+
+    } else {
+      navigation.navigate(item.action);
+    }
   }
-  render() {
-    return (
-      <View style={styles.container}> 
-        <SafeAreaView>
-        <FlatList
-          data={dataJson}
-          renderItem={({ item, index }) => <SideBarItem item={item} {...this.props}/>}
-          />
-          </SafeAreaView>
-      </View>
-    )
-  }
+
+
+  /*
+  ..######...#######..##.....##.########...#######..##....##.########.##....##.########..######.
+  .##....##.##.....##.###...###.##.....##.##.....##.###...##.##.......###...##....##....##....##
+  .##.......##.....##.####.####.##.....##.##.....##.####..##.##.......####..##....##....##......
+  .##.......##.....##.##.###.##.########..##.....##.##.##.##.######...##.##.##....##.....######.
+  .##.......##.....##.##.....##.##........##.....##.##..####.##.......##..####....##..........##
+  .##....##.##.....##.##.....##.##........##.....##.##...###.##.......##...###....##....##....##
+  ..######...#######..##.....##.##.........#######..##....##.########.##....##....##.....######.
+  */
+  return (
+    <View style={styles.container}> 
+      <SafeAreaView>
+      <FlatList
+        data={dataJson}
+          renderItem={({ item, index }) => <SideBarItem item={item} onItemPress={()=>_onItemPress(item)} />}
+        />
+        </SafeAreaView>
+    </View>
+  )
+  
 }
 
 export default SideMenu
@@ -107,16 +142,17 @@ const styles = {
     //paddingHorizontal: 40
   },
   itemContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingHorizontal: StyleConfig.countPixelRatio(20),
+    paddingVertical: StyleConfig.countPixelRatio(10),
     //backgroundColor:'blue'
     
   },
   titleText: {
-    fontSize: 16,
+    fontSize: StyleConfig.countPixelRatio(17),
     fontFamily: FONTS.NERIS_REGULAR,
     fontWeight: '300',
-    color: COLORS.DRAWER_TEXT_COLOR
+    color: COLORS.DRAWER_TEXT_COLOR,
+    lineHeight: StyleConfig.countPixelRatio(20)
     //backgroundColor:'green'
   }
 }
