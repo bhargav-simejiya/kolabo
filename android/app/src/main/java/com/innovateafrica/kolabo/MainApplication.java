@@ -1,4 +1,4 @@
-package com.kolabo;
+package com.innovateafrica.kolabo;
 
 import android.app.Application;
 import android.content.Context;

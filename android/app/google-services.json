@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "945147674348",
+    "project_id": "kolabo-app",
+    "storage_bucket": "kolabo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945147674348:android:b1dd37b4ddd86041ea2fc9",
+        "android_client_info": {
+          "package_name": "com.innovateafrica.kolabo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945147674348-9v7a78oehdicpve64pbkheelekh0k0q6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innovateafrica.kolabo",
+            "certificate_hash": "681ed45120fd6b8deaa18012288686d4f1a98fec"
+          }
+        },
+        {
+          "client_id": "945147674348-f7h3ignlga13q1eaecmnkpkqus1ql9op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innovateafrica.kolabo",
+            "certificate_hash": "6f98f0fd9aee34d0ebb8fbe739cfede1a05a31cd"
+          }
+        },
+        {
+          "client_id": "945147674348-4eadchsh384flckj3rc0fsq4ukbldibi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6q9sHFDmHh9pFiCGcl_fxc3-x9nL0vh8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945147674348-4eadchsh384flckj3rc0fsq4ukbldibi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "945147674348-8nhflf8kndpvk9s88l79k4nukabr5qme.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.innovateafrica.kolabo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

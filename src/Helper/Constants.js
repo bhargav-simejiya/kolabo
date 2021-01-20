@@ -15,6 +15,11 @@ export const BASE_URL = ''
 // SENTRY URL
 export const SENTRY_URL = 'https://1311e5835f5547f5be68ee4306af298f@o326473.ingest.sentry.io/5590572'
 
+// FACEBOOK ID
+export const FACEBOOK_APP_ID = 428580298157452;
+// callback url https://kolabo-app.firebaseapp.com/__/auth/handler
+
+
 // LOTTIE_ANIMATION_FILE
 export const LOTTIE_ANIMATION_FILE = require('../../loader1.json')
 

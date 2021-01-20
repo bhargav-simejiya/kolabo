@@ -4,7 +4,9 @@ import {
   Text, View, ImageBackground, Image,
   TouchableOpacity, SafeAreaView, StatusBar
 } from 'react-native'
-
+import { LoginManager, AccessToken } from 'react-native-fbsdk';
+import auth from '@react-native-firebase/auth';
+import firebase from '../../Helper/Firebase';
 // File Imports
 import styles from './styles'
 import COLORS from '../../Helper/Colors'
@@ -44,6 +46,39 @@ export class Register extends Component {
   _loginButtonPressed = () => {
     this.props.navigation.navigate('Login')
   }
+
+  onFacebookButtonPress = async ()=> {
+    // Attempt login with permissions
+    const result = await LoginManager.logInWithPermissions(["email", "public_profile"]);
+    if (result.isCancelled) {
+      throw 'User cancelled the login process';
+    }
+    
+    // Once signed in, get the users AccesToken
+    const data = await AccessToken.getCurrentAccessToken();
+    if (!data) {
+      throw 'Something went wrong obtaining access token';
+    }
+  
+    // Create a Firebase credential with the AccessToken
+    const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(facebookCredential);
+  }
+
+  componentWillMount() {
+    // Add listener here
+    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
+        if (!user && user != null) {
+            console.log("Register ", user)
+        }
+    });
+}
+
+componentWillUnmount() {
+    // Don't forget to unsubscribe when the component unmounts
+    this.unsubscribe();
+}
 
   /*
   ..######...#######..##.....##.########...#######..##....##.########.##....##.########..######.
@@ -100,7 +135,7 @@ export class Register extends Component {
         <TouchableOpacity style={{ marginHorizontal: 15 }}>
           <Image source={imgTwitter} style={styles.socialIcon} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}>
           <Image source={imgInstagram} style={styles.socialIcon} />
         </TouchableOpacity>
       </View>

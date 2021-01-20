@@ -1,7 +1,7 @@
 // Global Imports
 import React, { Component } from 'react'
 import {
-  Text, View, ImageBackground, Image,
+  Text, View, Image,
   TouchableOpacity, SafeAreaView, StatusBar
 } from 'react-native'
 
@@ -11,8 +11,10 @@ import COLORS from '../../Helper/Colors'
 import LocalizedStrings from '../../Helper/LocalizedStrings'
 
 // Component Imports
+import TextField from '@TextField'
 import CustomButton from '@Button'
 import HeaderBackButton from '@HeaderBackButton'
+import CustomHeader from '@Header'
 import imgBG from '../../../assets/images/bgRegister.png'
 import imgGoogle from '../../../assets/images/google.png'
 import imgInstagram from '../../../assets/images/instagram.png'
@@ -60,11 +62,16 @@ export class RegistrationFormScreen extends Component {
       <View style={{ flex: 1 }}>
         <StatusBar barStyle='light-content' />
         <SafeAreaView style={styles.container}>
-          <HeaderBackButton buttonAction={this._onPressBack} btnStyle={styles.backButton} tintColor={'white'} />
-          <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+          <CustomHeader
+            leftComponent={() => <HeaderBackButton buttonAction={this._onPressBack} btnStyle={styles.backButton} tintColor={COLORS.APP_PRIMARY} />}
+            centerComponent={() => <View style={{ flex: 1, justifyContent: 'center' }}><Text style={styles.headerText}>Registration Details</Text></View>}
+          />
+          <View>
             {this.renderContent()}
-            {this.renderRegisterButton()}
-            {this.renderSocialLogin()}
+            {this.renderContent()}
+            {this.renderContent()}
+            {this.renderContent()}
+            {this.renderContent()}
           </View>
         </SafeAreaView>
       </View>
@@ -73,9 +80,10 @@ export class RegistrationFormScreen extends Component {
 
   renderContent = () => {
     return (
-      <View>
-        <Text style={styles.intro}>{LocalizedStrings.Register.Intro}</Text>
-      </View>
+        <TextField
+          placeholder={'Username'}
+          containerView={styles.textInput}
+      />
     )
   }
 

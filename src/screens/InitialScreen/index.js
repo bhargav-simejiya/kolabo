@@ -31,8 +31,8 @@ export class InitialScreen extends Component {
   */
 
   _exploreButtonPressed = () => {
-     this.props.navigation.navigate('Dashboard')
-    //this.props.navigation.navigate('AboutRAIN')
+    //  this.props.navigation.navigate('Dashboard')
+    this.props.navigation.navigate('AboutRAIN')
   }
 
   /*
