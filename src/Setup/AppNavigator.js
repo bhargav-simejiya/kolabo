@@ -10,30 +10,30 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Zocial from 'react-native-vector-icons/Zocial'
 
 // File Imports
-import FONTS from './src/Helper/Fonts'
-import App from './App'
-import InitialScreen from './src/screens/InitialScreen'
-import AboutRAIN from './src/screens/AboutRAIN'
-import Register from './src/screens/Register'
-import RegistrationFormScreen from './src/screens/RegistrationFormScreen'
-import Login from './src/screens/Login'
+import FONTS from '../Helper/Fonts'
+import App from '../../App'
+import InitialScreen from '../screens/InitialScreen'
+import AboutRAIN from '../screens/AboutRAIN'
+import Register from '../screens/Register'
+import RegistrationFormScreen from '../screens/RegistrationFormScreen'
+import Login from '../screens/Login'
 
-import HomeScreen from './src/screens/HomeScreen'
+import HomeScreen from '../screens/HomeScreen'
 
-import NotificationScreen from './src/screens/NotificationsScreen'
-import SettingsScreen from './src/screens/SettingsScreen'
-import ContactUsScreen from './src/screens/ContactUsScreen'
-import AboutUsScreen from './src/screens/AboutUsScreen'
-import FAQScreen from './src/screens/FAQScreen'
+import NotificationScreen from '../screens/NotificationsScreen'
+import SettingsScreen from '../screens/SettingsScreen'
+import ContactUsScreen from '../screens/ContactUsScreen'
+import AboutUsScreen from '../screens/AboutUsScreen'
+import FAQScreen from '../screens/FAQScreen'
 
-import EventScreen from './src/screens/EventScreen'
-import MessagesScreen from './src/screens/MessagesScreen'
-import ProfileScreen from './src/screens/ProfileScreen'
+import EventScreen from '../screens/EventScreen'
+import MessagesScreen from '../screens/MessagesScreen'
+import ProfileScreen from '../screens/ProfileScreen'
 
 import SideMenu from '@SideMenu'
-import StyleConfig from './src/Helper/StyleConfig'
-import { WIDTH } from './src/Helper/Constants'
-import COLORS from './src/Helper/Colors'
+import StyleConfig from '../Helper/StyleConfig'
+import { WIDTH } from '../Helper/Constants'
+import COLORS from '../Helper/Colors'
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 const Tab = createBottomTabNavigator()

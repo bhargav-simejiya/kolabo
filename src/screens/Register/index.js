@@ -7,6 +7,12 @@ import {
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import auth from '@react-native-firebase/auth';
 import firebase from '../../Helper/Firebase';
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-community/google-signin';
+
 // File Imports
 import styles from './styles'
 import COLORS from '../../Helper/Colors'
@@ -21,6 +27,33 @@ import imgInstagram from '../../../assets/images/instagram.png'
 import imgTwitter from '../../../assets/images/twitter.png'
 
 export class Register extends Component {
+
+  componentDidMount = () => {
+    // Add listener here
+    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (!user && user != null) {
+          console.log("Register ", user)
+      }
+    });
+    GoogleSignin.configure({
+        scopes: ['profile', 'email'], // what API you want to access on behalf of the user, default is email and profile
+      webClientId: '945147674348-9v7a78oehdicpve64pbkheelekh0k0q6.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+      
+        offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+        forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
+       });
+    // GoogleSignin.configure({
+    //   scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
+    //   webClientId: '945147674348-4eadchsh384flckj3rc0fsq4ukbldibi.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+    //   offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+    //   hostedDomain: '', // specifies a hosted domain restriction
+    //   loginHint: '', // [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)
+    //   forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
+    //   accountName: '', // [Android] specifies an account name on the device that should be used
+    //   iosClientId: '', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
+    // });
+  }
+
   render() {
     return this.renderMainView()
   }
@@ -46,6 +79,29 @@ export class Register extends Component {
   _loginButtonPressed = () => {
     this.props.navigation.navigate('Login')
   }
+  onGoogleSignIn = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      console.log("reached google sign in");
+      const userInfo = await GoogleSignin.signIn();
+      console.log("userInfo ", userInfo)
+      this.setState({ userInfo });
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log("onGoogleSignIn  CANCELLED")
+        // user cancelled the login flow
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log("onGoogleSignIn  IN_PROGRESS")
+        // operation (e.g. sign in) is in progress already
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log("onGoogleSignIn  PLAY_SERVICES_NOT_AVAILABLE")
+        // play services not available or outdated
+      } else {
+        console.log("onGoogleSignIn  ELSE", error)
+        // some other error happened
+      }
+    }
+  }
 
   onFacebookButtonPress = async ()=> {
     // Attempt login with permissions
@@ -66,14 +122,6 @@ export class Register extends Component {
     return auth().signInWithCredential(facebookCredential);
   }
 
-  componentWillMount() {
-    // Add listener here
-    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
-        if (!user && user != null) {
-            console.log("Register ", user)
-        }
-    });
-}
 
 componentWillUnmount() {
     // Don't forget to unsubscribe when the component unmounts
@@ -129,7 +177,7 @@ componentWillUnmount() {
   renderSocialLogin = () => {
     return (
       <View style={{ flexDirection: 'row', marginVertical: 40 }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={ this.onGoogleSignIn}>
           <Image source={imgGoogle} style={styles.socialIcon} />
         </TouchableOpacity>
         <TouchableOpacity style={{ marginHorizontal: 15 }}>

@@ -14,19 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "945147674348-9v7a78oehdicpve64pbkheelekh0k0q6.apps.googleusercontent.com",
+          "client_id": "945147674348-nl30psa2frbvpabgbs4kaev28kh416ct.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.innovateafrica.kolabo",
-            "certificate_hash": "681ed45120fd6b8deaa18012288686d4f1a98fec"
-          }
-        },
-        {
-          "client_id": "945147674348-f7h3ignlga13q1eaecmnkpkqus1ql9op.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.innovateafrica.kolabo",
-            "certificate_hash": "6f98f0fd9aee34d0ebb8fbe739cfede1a05a31cd"
+            "certificate_hash": "292ac0e230ca4cd6ea7c3fde8c40d9f167678601"
           }
         },
         {

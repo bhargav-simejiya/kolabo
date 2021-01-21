@@ -1,21 +1,25 @@
 // Global imports
 import React, { Component } from 'react'
-import { TextInput, View, Image, TouchableOpacity } from 'react-native';
+import { TextInput, Text,View, Image, TouchableOpacity } from 'react-native';
 
 // File imports
 import COLORS from '../../Helper/Colors'
 import FONTS from '../../Helper/Fonts'
+import StyleConfig from '../../Helper/StyleConfig'
 
 class CustomTextField extends Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      // style: {},
-    };
-  }
+    super(props)
+    const { input } = props
+    this.hasValue = false
+    if (input.value !== undefined && input.value.length > 0) {
+        this.hasValue = true
+    }
+}
 
   render() {
     const {
+      refProp, autoFocus, value, multiline, input, onChangeText, keyboardType, meta: { touched, error },
       viewStyle,
       placeholderColor,
       autoCapitalize,
@@ -29,7 +33,8 @@ class CustomTextField extends Component {
       leftimgStyle,
       onPressRight,
       onPressLeft,
-      rightIconStyle
+      rightIconStyle,
+      notes
     } = this.props;
     return (
       <View style={containerView ? containerView : styles.containerView}>
@@ -44,11 +49,20 @@ class CustomTextField extends Component {
             </TouchableOpacity>
           }
           <TextInput
+            ref={refProp ? refProp : (node) => this.input = node}
+            value={typeof value === 'number' ? '' + value : value}
+            onChangeText={onChangeText}
+            multiline={multiline}
+            autoFocus={autoFocus}
+            selectTextOnFocus={true}
+            maxLength={maxLength}
+            keyboardType={keyboardType === "numeric" ? (Platform.OS === 'android' ? (Platform.Version < 21 ? 'phone-pad' : 'numeric') : 'numeric') : keyboardType}
+            secureTextEntry={input.name === "password" || input.name === "signUpPassword" || input.name === "old_password" || input.name === "new_password" || input.name === "new_vpassword" ? true : false}
             editable={editable}
             selectionColor={COLORS.APP_PRIMARY}
             placeholderTextColor={placeholderColor ? placeholderColor : COLORS.LIGHT_GRAY_BLUE}
             autoCapitalize={autoCapitalize ? autoCapitalize : 'none'}
-            // maxLength={maxLength ? maxLength : 48}
+            {...input}
             {...this.props}
             style={[styles.textFieldStyle, inputStyle]}
           />
@@ -62,6 +76,9 @@ class CustomTextField extends Component {
             </TouchableOpacity>
           }
         </View>
+        {notes && <View style={styles.notesContainer}>
+          <Text style={styles.notesText}>{notes}</Text>
+        </View>}
       </View>
     )
   }
@@ -76,30 +93,39 @@ const styles = {
   textFieldStyle: {
     flex: 1,
     textAlign: 'left',
-    fontFamily: FONTS.POPPINS_REGULAR,
-    fontSize: 16,
-    padding: 12
+    fontFamily: FONTS.NERIS_REGULAR,
+    fontSize: StyleConfig.countPixelRatio(16),
+    padding: StyleConfig.countPixelRatio(12)
   },
   view: {
     backgroundColor: 'white',
-    borderRadius: 30,
+    borderRadius: StyleConfig.countPixelRatio(30),
     borderWidth: 1.0,
     borderColor: COLORS.TEXT_FIELD_BORDER,
     alignItems: 'center',
     flexDirection: 'row',
   },
   rightIcon: {
-    height: 18,
-    width: 18,
+    height: StyleConfig.countPixelRatio(18),
+    width: StyleConfig.countPixelRatio(18),
     justifyContent: 'center',
-    marginLeft: 5,
-    marginRight: 8,
+    marginLeft: StyleConfig.countPixelRatio(5),
+    marginRight: StyleConfig.countPixelRatio(8),
   },
   leftIcon: {
-    height: 18,
-    width: 18,
+    height: StyleConfig.countPixelRatio(18),
+    width: StyleConfig.countPixelRatio(18),
     justifyContent: 'center',
-    marginLeft: 12,
-    marginRight: 5,
+    marginLeft: StyleConfig.countPixelRatio(12),
+    marginRight: StyleConfig.countPixelRatio(5),
   },
+  notesContainer: {
+    flexDirection: 'row-reverse',
+    marginHorizontal: StyleConfig.countPixelRatio(16)
+  },
+  notesText: {
+    textAlign: 'left',
+    fontFamily: FONTS.NERIS_REGULAR,
+    fontSize: StyleConfig.countPixelRatio(10),
+  }
 }
