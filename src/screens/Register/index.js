@@ -26,10 +26,13 @@ import imgGoogle from '../../../assets/images/google.png'
 import imgInstagram from '../../../assets/images/instagram.png'
 import imgTwitter from '../../../assets/images/twitter.png'
 
+
 export class Register extends Component {
 
   componentDidMount = () => {
-    GoogleSignin.configure();
+      GoogleSignin.configure({
+        "webClientId":"945147674348-4eadchsh384flckj3rc0fsq4ukbldibi.apps.googleusercontent.com"
+      });  
     // Add listener here
     this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
       if (!user && user != null) {
@@ -81,7 +84,28 @@ export class Register extends Component {
       console.log("reached google sign in");
       const userInfo = await GoogleSignin.signIn();
       console.log("userInfo ", userInfo)
-      this.setState({ userInfo });
+     
+      const { idToken } = userInfo;
+      // Create a Google credential with the token
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      // Sign-in the user with the credential
+    const firebaseRes =await auth().signInWithCredential(googleCredential);
+    console.log("firebaseRes ", firebaseRes)
+    const { additionalUserInfo: { profile: providerId }, user: { displayName, email, emailVerified, phoneNumber, photoURL, uid } } = firebaseRes
+    let token = await getNotificationDeviceToken()
+    writeDatabase(`user/${uid}`, {
+      "name": displayName,
+      email,
+      emailVerified,
+      phoneNumber,
+      photoURL,
+      "provider": "gmail",
+      uid,
+      token
+    }); 
+    this.props.navigation.navigate('Dashboard')
+      
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log("onGoogleSignIn  CANCELLED")
@@ -132,6 +156,7 @@ export class Register extends Component {
       uid,
       token
     });    
+    this.props.navigation.navigate('Dashboard')
   }
   
 
