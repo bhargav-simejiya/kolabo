@@ -8,6 +8,7 @@ import messaging from '@react-native-firebase/messaging'
 // File Imports
 import { SENTRY_URL } from './src/Helper/Constants'
 import LocalizedStrings from './src/Helper/LocalizedStrings'
+import {setNotificationDeviceToken} from './src/Helper/Utills'
 
 // Component Imports
 import Loader from '@Loader'
@@ -30,9 +31,9 @@ class App extends React.Component {
     this.props.navigation.dispatch(CommonActions.reset({ index: 1, routes: [{ name: 'InitialScreen' }] }))
     this.requestUserPermission()
 
-    messaging().onMessage(async remoteMessage => {
-      alert('A new FCM message arrived!', JSON.stringify(remoteMessage))
-    })
+    // messaging().onMessage(async remoteMessage => {
+    //   alert('A new FCM message arrived!', JSON.stringify(remoteMessage))
+    // })
 
     messaging().getInitialNotification()
       .then(remoteMessage => {
@@ -59,7 +60,7 @@ class App extends React.Component {
     if (authorizationStatus) {
       let fcmToken = await messaging().getToken()
       console.log('fcmToken: ', fcmToken)
-      // Utils.setNotificationDeviceToken(fcmToken)
+      setNotificationDeviceToken(fcmToken)
     }
   }
 }

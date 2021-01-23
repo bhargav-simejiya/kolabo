@@ -6,7 +6,7 @@ const settings = {timestampsInSnapshots: true};
 const config = {
   apiKey: "AIzaSyBj4fG_RY4VY01VcNZBAFLyhfMbCl7Bsvs",
   authDomain: "https://kolabo-app.firebaseapp.com",
-  databaseURL: "https://kolabo-app.firebaseio.com",
+  databaseURL: "https://kolabo-app-default-rtdb.firebaseio.com",
   projectId: "kolabo-app",
   storageBucket: "kolabo-app.appspot.com",
   messagingSenderId: "945147674348",

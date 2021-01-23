@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "945147674348",
+    "firebase_url": "https://kolabo-app-default-rtdb.firebaseio.com",
     "project_id": "kolabo-app",
     "storage_bucket": "kolabo-app.appspot.com"
   },
@@ -19,6 +20,14 @@
           "android_info": {
             "package_name": "com.innovateafrica.kolabo",
             "certificate_hash": "292ac0e230ca4cd6ea7c3fde8c40d9f167678601"
+          }
+        },
+        {
+          "client_id": "945147674348-ohl0l6e59dcth29spuk2gpisd8buob5i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innovateafrica.kolabo",
+            "certificate_hash": "c612dac52001fcda5782c30cfc889a688341fbe5"
           }
         },
         {

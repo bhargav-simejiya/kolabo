@@ -17,7 +17,7 @@ import {
 import styles from './styles'
 import COLORS from '../../Helper/Colors'
 import LocalizedStrings from '../../Helper/LocalizedStrings'
-
+import { writeDatabase, getNotificationDeviceToken} from '../../Helper/Utills'
 // Component Imports
 import CustomButton from '@Button'
 import HeaderBackButton from '@HeaderBackButton'
@@ -29,19 +29,14 @@ import imgTwitter from '../../../assets/images/twitter.png'
 export class Register extends Component {
 
   componentDidMount = () => {
+    GoogleSignin.configure();
     // Add listener here
     this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
       if (!user && user != null) {
           console.log("Register ", user)
       }
     });
-    GoogleSignin.configure({
-        scopes: ['profile', 'email'], // what API you want to access on behalf of the user, default is email and profile
-      webClientId: '945147674348-9v7a78oehdicpve64pbkheelekh0k0q6.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
-      
-        offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
-        forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
-       });
+   // GoogleSignin.configure();
     // GoogleSignin.configure({
     //   scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
     //   webClientId: '945147674348-4eadchsh384flckj3rc0fsq4ukbldibi.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
@@ -81,6 +76,7 @@ export class Register extends Component {
   }
   onGoogleSignIn = async () => {
     try {
+      
       await GoogleSignin.hasPlayServices();
       console.log("reached google sign in");
       const userInfo = await GoogleSignin.signIn();
@@ -118,9 +114,26 @@ export class Register extends Component {
   
     // Create a Firebase credential with the AccessToken
     const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
+    
+    
+    console.log("facebookCredential ", facebookCredential)
     // Sign-in the user with the credential
-    return auth().signInWithCredential(facebookCredential);
+    const firebaseRes = await auth().signInWithCredential(facebookCredential);
+    console.log("firebaseRes ", firebaseRes)
+    const { additionalUserInfo: { profile: providerId }, user: { displayName, email, emailVerified, phoneNumber, photoURL, uid } } = firebaseRes
+    let token = await getNotificationDeviceToken()
+    writeDatabase(`user/${uid}`, {
+      "name": displayName,
+      email,
+      emailVerified,
+      phoneNumber,
+      photoURL,
+      "provider": "facebook",
+      uid,
+      token
+    });    
   }
+  
 
 
 componentWillUnmount() {
@@ -183,7 +196,7 @@ componentWillUnmount() {
         <TouchableOpacity style={{ marginHorizontal: 15 }}>
           <Image source={imgTwitter} style={styles.socialIcon} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}>
+        <TouchableOpacity onPress={this.onFacebookButtonPress}>
           <Image source={imgInstagram} style={styles.socialIcon} />
         </TouchableOpacity>
       </View>
